@@ -2,15 +2,31 @@
 
 import { motion } from "framer-motion";
 
+// Icon components
+const TrendingIcon = () => (
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+  </svg>
+);
+
+const ComputerIcon = () => (
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+  </svg>
+);
+
+const LocationIcon = () => (
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+);
+
 const programs = [
   {
     title: "Online Entrepreneurship",
     description: "Digital income, online work readiness, e-commerce introductions.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    ),
+    icon: TrendingIcon,
     gradientFrom: "#2D4A35",
     gradientVia: "#4A7C59",
     gradientTo: "#1E3224",
@@ -18,11 +34,7 @@ const programs = [
   {
     title: "Basic Computer Skills",
     description: "Foundational skills for kūpuna in a supportive environment.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+    icon: ComputerIcon,
     gradientFrom: "#1A1A1A",
     gradientVia: "#2D4A35",
     gradientTo: "#1E3224",
@@ -30,12 +42,7 @@ const programs = [
   {
     title: "Digital Navigators",
     description: "Free, one-on-one tech help statewide through public libraries.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+    icon: LocationIcon,
     gradientFrom: "#4A7C59",
     gradientVia: "#2D4A35",
     gradientTo: "#1A1A1A",
@@ -97,7 +104,7 @@ export default function Programs() {
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Icon */}
                   <div className="mb-6 text-white">
-                    {program.icon}
+                    <program.icon />
                   </div>
                   
                   {/* Title */}
